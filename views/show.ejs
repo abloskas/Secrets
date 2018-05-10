@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Show page</title>
+</head>
+<body>
+    <% if(messages.errors) { %>
+        <% for (var x of messages.errors) { %>
+             <h3><%= x %></h3>
+        <% } %>
+    <% } %>
+    <a href="/secrets">Home</a>
+    <a href="/logout">Logout, yo!</a>
+    <h1>Comments on this Secret</h1>
+   <h3>Secret: </h3>
+   <h4><%=message.message%></h4>
+   <h4>--<%=message.name%></h4>
+   <hr>
+   <% for (let y of message.comments) { %>
+    <h5><%=y.name%> replied:</h5>
+    <p><%=y.comment%></p>
+    <% } %> 
+</body>
+</html>

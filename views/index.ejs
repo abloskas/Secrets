@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Login/Register, Bro!</title>
+</head>
+<body>
+     <% if(messages.errors) { %>
+        <% for (var x of messages.errors) { %>
+            <h3><%= x %></h3>
+        <% } %>
+    <% } %>
+    <h1>Welcome to my Website, Dudes!</h1>
+    <h3>Register:</h3>
+        <form action="/register" method="POST">
+            First Name: <input type="text" name="first_name">
+            Last Name: <input type="text" name="last_name">
+            Birthday: <input type="date" name="birthday">
+            Email: <input type="text" name="email">
+            Password: <input type="password" name="password">
+            <input type="submit" value="Submit">
+        </form>
+    <h3>Login:</h3>
+    <form action="/login" method="POST">
+        Email: <input type="text" name="email">
+        Password: <input type="password" name="password">
+        <input type="submit" value="Submit">
+    </form>
+</body>
+</html>
